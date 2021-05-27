@@ -53,20 +53,20 @@ void main(List<String> arguments) async {
           "[YAMH] The file you provided doesn't exist. Make sure you spelt both the path and file right, as well as ensure the file is in that directory.");
     }
 
-    var file = args['file'].readAsString();
-    var parsed = markdownToHtml(file, inlineSyntaxes: [InlineHtmlSyntax()]);
-
-    if (args['out'] != null) {
-      if (args['out'].endsWith('.html') ==
-          false | (args['out'].endsWith('.htm') == false)) {
-        File(args['out'] + '.html').writeAsString(parsed);
-      } // Check if the output ends in .htm(l)
-      File(args['out']).writeAsString(parsed);
-    } else {
-      File(args['file'].directoryPath + args['file'].name + '.html')
-          .writeAsString(parsed);
-    } // Write HTML to same place as Markdown file, or a specific place
-  } // Parse a Markdown file
+    var input = File(args['file']);
+    await input.readAsString().then((String file) {
+      var parsed = markdownToHtml(file, inlineSyntaxes: [InlineHtmlSyntax()]);
+      if (args['out'] != null) {
+        if (args['out'].endsWith('.html') ==
+            false | (args['out'].endsWith('.htm') == false)) {
+          File(args['out'] + '.html').writeAsString(parsed);
+        } // Check if the output ends in .htm(l)
+        File(args['out']).writeAsString(parsed);
+      } else {
+        File(input.path + '.html').writeAsString(parsed);
+      } // Write HTML to same place as Markdown file, or a specific place
+    }); // Read file into String
+  }
 
   if (args['string'] != null) {
     if (args['string'] == '') {
