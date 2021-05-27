@@ -13,4 +13,4 @@ jobs:
         run: dart pub get
 
       - name: Test build
-        run: dart compile bin/yamh.dart
+        run: dart compile exe bin/yamh.dart
