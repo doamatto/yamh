@@ -1,0 +1,16 @@
+name: Lint
+on: [push, pull_request]
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Test build
+        run: dart compile bin/yamh.dart

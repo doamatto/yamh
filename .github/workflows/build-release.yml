@@ -1,0 +1,35 @@
+name: Lint
+on:
+  release:
+    types: [created]
+jobs: 
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        include:
+          - os: ubuntu-latest
+            output-name: hello-linux
+          - os: macOS-latest
+            output-name: hello-mac
+          - os: windows-latest
+            output-name: hello-windows.exe
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Create binaries
+        run: |
+          mkdir build/
+          dart2native bin/yamh.dart -v -o build/${{ matrix.output-name }}
+      
+      - name: Upload to Github Releases
+        uses: fnkr/github-action-ghr@v1
+        env:
+          GHR_PATH: build/
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
