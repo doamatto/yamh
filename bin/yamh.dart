@@ -5,9 +5,22 @@ import 'package:markdown/markdown.dart';
 
 void main(List<String> arguments) {
   var parser = ArgParser();
-  parser.addOption('file', abbr: 'f');
-  parser.addOption('string', abbr: 's');
-  parser.addOption('out', abbr: 'o');
+  parser.addOption('file',
+      abbr: 'f',
+      help: 'Use this option to parse a Markdown file to HTML.',
+      valueHelp: 'file');
+  parser.addOption('string',
+      abbr: 's',
+      help:
+          'Use this option to parse a string to HTML. It can be converted to either an HTML file or returned in the console.',
+      valueHelp: 'string');
+  parser.addOption('out',
+      abbr: 'o',
+      help:
+          'Provide the directory or file you want converted HTML files to go.',
+      valueHelp: 'out-dir');
+  parser.addFlag('help',
+      abbr: 'h', help: 'Use this flag to get help with YAMH');
 
   var args = parser.parse(arguments);
   if (args['file'] == null && args['string'] == null) {
