@@ -6,9 +6,13 @@ A dirt simple, null-safe Markdown to HTML converter.
 - FFI compatiblity compilation\*
 - Support for either string input or file input
 - Batch parse Markdown files\*
+- Available for NPM\*\*
+- Powers a WTFF\*\*\*
 - Written in Dart (because I felt like it)
 
 \* Planned features; not complete or in the latest build yet.
+\*\* This would actually be really nice to make things compile way faster with several files. Planned, but not guaranteed.
+\*\*\* This is just an idea of mine that I may or may not do. Stands for `Way Too Fast Framework` and would be used for websites.
 
 ## Usage
 ### Command-line usage
