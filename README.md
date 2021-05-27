@@ -5,6 +5,7 @@ A dirt simple, null-safe Markdown to HTML converter.
 - Functions for both Dart and Flutter\*
 - FFI compatiblity compilation\*
 - Support for either string input or file input
+- Batch parse Markdown files\*
 - Written in Dart (because I felt like it)
 
 \* Planned features; not complete or in the latest build yet.
