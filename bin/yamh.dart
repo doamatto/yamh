@@ -23,6 +23,9 @@ void main(List<String> arguments) {
       abbr: 'h', help: 'Use this flag to get help with YAMH');
 
   var args = parser.parse(arguments);
+  if (args['help'] == true) {
+    return printUsage(parser);
+  }
   if (args['file'] == null && args['string'] == null) {
     throw ArgumentError(
         '[YAMH] Error: need to use at least one option (file or string)');
