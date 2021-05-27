@@ -18,9 +18,13 @@ A dirt simple, null-safe Markdown to HTML converter.
 
 ## Usage
 ### Command-line usage
-There are two ways you can use YAMH:
-- `./yamh -f/--file <mdfile>`, where `<mdfile>` is the path to your Markdown file and you choose between `-f` or `--file` as a flag; and:
-- `./yamh -s/--string <string>`, where `<string>` is a string that contains the Markdown you want to convert and you choose between `-s` or `--str` as a flag.
+You can see the usage information provided by running `./yamh -h` or `./yamh --help`. All of these commands are flags/options for the `./yamh` command and should be appended to it.
+
+- `-f, --file <file>`&mdash; Parse a Markdown file to HTML, where `<file>` is the path to a Markdown file.
+- `-s, --string <string>`&mdash; Parse a string containing Markdown to HTML, where `<string>` is the aforementioned string.
+- `-o, --out <out-dir>`&mdash; Specify a place for converted HTML files to go.
+    - **If you are using the `-s` option**, it will default to saving in the console.
+    - **If you are using the `-f` option**, it will default to saving in the same directory as the Markdown file. 
 
 ### in Dart and Flutter
 This has not been implemented yet. When it is, this will be updated to show the relevant documentation.
