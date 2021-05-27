@@ -11,19 +11,22 @@ void main(List<String> arguments) {
 
   var args = parser.parse(arguments);
   if (args['file'] == null && args['string'] == null) {
-    throw NullThrownError();
+    throw ArgumentError(
+        '[YAMH] Error: need to use at least one option (file or string)');
   } // Make sure an option is used
   if (args['file'] != null && args['string'] != null) {
     throw ArgumentError(
         '[YAMH] Error: cannot define both file and string arguments.');
   } // Make sure only one option is used
-  if (args['out'] != null && args['out'].isEmpty()) {
-    throw NullThrownError();
+  if (args['out'] != null && args['out'] == '') {
+    throw ArgumentError(
+        '[YAMH] Error: The output file must be defined to use the -o/--out flag');
   } // Make sure that if the output directory is used that it isn't empty
 
   if (args['file'] != null) {
-    if (args['file'].isEmpty()) {
-      throw NullThrownError(); // Make sure that string isn't empty
+    if (args['file'] == '') {
+      throw ArgumentError(
+          '[YAMH] Error: File value is empty. Make sure to mention where the file is'); // Make sure that string isn't empty
     }
     if (args['file'].endsWith('.md') == false) {
       throw ArgumentError(
@@ -46,8 +49,9 @@ void main(List<String> arguments) {
   } // Parse a Markdown file
 
   if (args['string'] != null) {
-    if (args['string'].isEmpty()) {
-      throw NullThrownError();
+    if (args['string'] == '') {
+      throw ArgumentError(
+          "[YAMH] You didn't provide a string to be parsed. Friendly reminder that spaces and « ' » will need double-quotes surrounding your string.");
     }
     var parsed =
         markdownToHtml(args['string'], inlineSyntaxes: [InlineHtmlSyntax()]);
