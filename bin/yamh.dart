@@ -85,5 +85,13 @@ void main(List<String> arguments) {
 }
 
 void printUsage(ArgParser parser) {
+  print('');
+  print('YAMH: Yet Another Markdown to HTML converter');
+  print('Developed by Matt Ronchetto (doamatto) - doamatto.xyz');
+  print('Licensed under the MIT License.');
+  print('Source: https://github.com/doamatto/yamh');
+  print('');
+  print('=== === ===');
+  print('');
   print(parser.usage);
-}
+} // Print usage for when using in the command line
