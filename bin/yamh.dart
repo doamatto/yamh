@@ -48,6 +48,10 @@ void main(List<String> arguments) async {
       throw ArgumentError(
           "[YAMH] Error: Markdown file doesn't end in « .md ». Make sure your file ends in that extension.");
     } // Check if file ends in .MD; could just ignore this though.
+    if (await File(args['file']).exists() == false) {
+      throw ArgumentError(
+          "[YAMH] The file you provided doesn't exist. Make sure you spelt both the path and file right, as well as ensure the file is in that directory.");
+    }
 
     var file = args['file'].readAsString();
     var parsed = markdownToHtml(file, inlineSyntaxes: [InlineHtmlSyntax()]);
