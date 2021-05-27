@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:args/args.dart';
 import 'package:markdown/markdown.dart';
 
-void main(List<String> arguments) {
+void main(List<String> arguments) async {
   var parser = ArgParser();
   parser.addOption('file',
       abbr: 'f',
@@ -74,9 +74,11 @@ void main(List<String> arguments) {
     if (args['out'] != null) {
       if (args['out'].endsWith('.html') ==
           false | (args['out'].endsWith('.htm') == false)) {
-        File(args['out'] + '.html').writeAsString(parsed);
+        await File(args['out'] + '.html').writeAsString(
+            parsed); // Write to location provided and add the file extension explicitly
       } // Check if the output ends in .htm(l)
-      File(args['out']).writeAsString(parsed);
+      await File(args['out'])
+          .writeAsString(parsed); // Write to location provided
     } else {
       print(parsed);
       return;
