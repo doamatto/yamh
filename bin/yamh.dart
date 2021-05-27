@@ -63,3 +63,7 @@ void main(List<String> arguments) {
     } // Write HTML to console or to place specified
   }
 }
+
+void printUsage(ArgParser parser) {
+  print(parser.usage);
+}
