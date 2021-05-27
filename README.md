@@ -23,9 +23,13 @@ There are two ways you can use YAMH:
 - `./yamh -s/--string <string>`, where `<string>` is a string that contains the Markdown you want to convert and you choose between `-s` or `--str` as a flag.
 
 ### in Dart
+This has not been implemented yet. When it is, this will be updated to show the relevant documentation.
 
 ### in Flutter
 This has not been implemented yet. When it is, this will be updated to show the relevant documentation.
+
+### in Node/NPM
+This has not been implemented yet. When it is, this will be updated to show the relevant documentation. It may also never happen, due to a lack of knowledge.
 
 ## Building
 1. Install [Dart](https://dart.dev)
