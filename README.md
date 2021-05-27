@@ -20,7 +20,7 @@ A dirt simple, null-safe Markdown to HTML converter.
 ### Command-line usage
 There are two ways you can use YAMH:
 - `./yamh -f/--file <mdfile>`, where `<mdfile>` is the path to your Markdown file and you choose between `-f` or `--file` as a flag; and:
-- `./yamh -s/--str <string>`, where `<string>` is a string that contains the Markdown you want to convert and you choose between `-s` or `--str` as a flag.
+- `./yamh -s/--string <string>`, where `<string>` is a string that contains the Markdown you want to convert and you choose between `-s` or `--str` as a flag.
 
 ### in Dart
 
