@@ -5,6 +5,7 @@ import 'package:markdown/markdown.dart';
 /// Converts a Markdown file to a HTML file.
 ///
 /// Throws an [ArgumentError] if either the input or output is mentioned, but left empty. Throws a [FileSystemException] is the file doesn't end in « .md » or if the file doesn't exist. If no output is defined, the HTML is saved to the same directory as the input file. A successful save returns a string saying « SAVED » is returned.
+void yamh_file(File infile, String? output) async {
   var fileStr = infile.toString();
   if (fileStr == '') {
     throw ArgumentError(
