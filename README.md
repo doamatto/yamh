@@ -45,4 +45,4 @@ Special thanks to:
 - the Flutter team for having amazing documentation of the utility; and:
 - all of the dependencies of YAMH for helping power this tool.
 
-This was made to try and cross off the "Markdown to HTML converter" [here](http://cyckl.net/idea). Although it does function for other things, you can have a single binary to interact with for all your needs.
+This was made to try and cross off the "Markdown to HTML converter" [here](https://cyckl.net/idea). Although it does function for other things, you can have a single binary to interact with for all your needs.
