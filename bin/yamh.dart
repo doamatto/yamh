@@ -97,4 +97,5 @@ void printUsage(ArgParser parser) {
 void SaveFile(String input, String output) async {
   var outpath = output.replaceAll(RegExp(r'\.html'), '');
   await File(outpath + '.html').writeAsString(input);
+  return;
 }
