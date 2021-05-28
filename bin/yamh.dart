@@ -54,16 +54,15 @@ void main(List<String> arguments) async {
     }
 
     var input = File(args['file']);
+    var inPath = input.path;
     await input.readAsString().then((String file) {
       var parsed = markdownToHtml(file, inlineSyntaxes: [InlineHtmlSyntax()]);
+      inPath = inPath.replaceAll(RegExp(r'\.md'), ''); // Remove .md from file
       if (args['out'] != null) {
-        if (args['out'].endsWith('.html') ==
-            false | (args['out'].endsWith('.htm') == false)) {
-          File(args['out'] + '.html').writeAsString(parsed);
-        } // Check if the output ends in .htm(l)
-        File(args['out']).writeAsString(parsed);
+        SaveFile(parsed, args['out']);
       } else {
-        File(input.path + '.html').writeAsString(parsed);
+        print(inPath);
+        File(inPath + '.html').writeAsString(parsed);
       } // Write HTML to same place as Markdown file, or a specific place
     }); // Read file into String
   }
@@ -76,13 +75,7 @@ void main(List<String> arguments) async {
     var parsed =
         markdownToHtml(args['string'], inlineSyntaxes: [InlineHtmlSyntax()]);
     if (args['out'] != null) {
-      if (args['out'].endsWith('.html') ==
-          false | (args['out'].endsWith('.htm') == false)) {
-        await File(args['out'] + '.html').writeAsString(
-            parsed); // Write to location provided and add the file extension explicitly
-      } // Check if the output ends in .htm(l)
-      await File(args['out'])
-          .writeAsString(parsed); // Write to location provided
+      SaveFile(parsed, args['out']);
     } else {
       print(parsed);
       return;
@@ -101,3 +94,12 @@ void printUsage(ArgParser parser) {
   print('');
   print(parser.usage);
 } // Print usage for when using in the command line
+
+void SaveFile(String input, String output) async {
+  var check = RegExp(r'\.(html|htm)');
+  input.replaceAll(RegExp(r'\.md'), ''); // Remove .md from file
+  if (check.hasMatch(output)) {
+    await File(output).writeAsString(input);
+  } // Check if file ends in htm(l)
+  await File(output + '.html').writeAsString(input);
+}
