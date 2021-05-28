@@ -41,8 +41,7 @@ This has not been implemented yet. When it is, this will be updated to show the 
 This project is licensed under the MIT License. You can see a copy of it in the `LICENSE` file in the root of this repository.
 
 Special thanks to:
-- the Dart team for having great documenation of the language,
-- the Flutter team for having amazing documentation of the utility; and:
+- the Dart and Flutter teams for having great documenation of the language,
 - [emn178](https://github.com/emn178) for making a [Markdown](https://github.com/emn178/markdown) example that is used in test and examples; and:
 - all of the dependencies of YAMH for helping power this tool.
 
