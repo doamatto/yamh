@@ -61,7 +61,6 @@ void main(List<String> arguments) async {
       if (args['out'] != null) {
         SaveFile(parsed, args['out']);
       } else {
-        print(inPath);
         File(inPath + '.html').writeAsString(parsed);
       } // Write HTML to same place as Markdown file, or a specific place
     }); // Read file into String
