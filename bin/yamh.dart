@@ -95,7 +95,6 @@ void printUsage(ArgParser parser) {
 } // Print usage for when using in the command line
 
 void SaveFile(String input, String output) async {
-  var outpath;
-  outpath = output.replaceAll(RegExp(r'\.html'), '');
+  var outpath = output.replaceAll(RegExp(r'\.html'), '');
   await File(outpath + '.html').writeAsString(input);
 }
