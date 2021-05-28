@@ -29,7 +29,8 @@ jobs:
           dart2native bin/yamh.dart -v -o build/${{ matrix.output-name }}
       
       - name: Upload to Github Releases
-        uses: fnkr/github-action-ghr@v1
+        uses: softprops/action-gh-release@v1
+        with:
+          files: build/
         env:
-          GHR_PATH: build/
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
