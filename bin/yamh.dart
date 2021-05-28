@@ -56,13 +56,13 @@ void main(List<String> arguments) async {
     }
 
     var input = File(args['file']);
-    var inPath = input.path;
     await input.readAsString().then((String file) {
       var parsed = markdownToHtml(file, inlineSyntaxes: [InlineHtmlSyntax()]);
-      inPath = inPath.replaceAll(RegExp(r'\.md'), ''); // Remove .md from file
       if (args['out'] != null) {
         SaveFile(parsed, args['out']);
       } else {
+        var inPath = input.path;
+        inPath = inPath.replaceAll(RegExp(r'\.md'), ''); // Remove .md from file
         File(inPath + '.html').writeAsString(parsed);
       } // Write HTML to same place as Markdown file, or a specific place
     }); // Read file into String
