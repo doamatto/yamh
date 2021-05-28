@@ -43,6 +43,7 @@ This project is licensed under the MIT License. You can see a copy of it in the 
 Special thanks to:
 - the Dart team for having great documenation of the language,
 - the Flutter team for having amazing documentation of the utility; and:
+- [emn178](https://github.com/emn178) for making a [Markdown](https://github.com/emn178/markdown) example that is used in test and examples; and:
 - all of the dependencies of YAMH for helping power this tool.
 
 This was made to try and cross off the "Markdown to HTML converter" [here](https://cyckl.net/idea). Although it does function for other things, you can have a single binary to interact with for all your needs.
