@@ -45,12 +45,14 @@ void main(List<String> arguments) async {
           '[YAMH] Error: File value is empty. Make sure to mention where the file is'); // Make sure that string isn't empty
     }
     if (args['file'].endsWith('.md') == false) {
-      throw ArgumentError(
-          "[YAMH] Error: Markdown file doesn't end in « .md ». Make sure your file ends in that extension.");
+      throw FileSystemException(
+          "[YAMH] The file you provided may not be a Markdown file, as it doesn't end in .md. Please change the file extension and try again.",
+          args['file']);
     } // Check if file ends in .MD; could just ignore this though.
     if (await File(args['file']).exists() == false) {
-      throw ArgumentError(
-          "[YAMH] The file you provided doesn't exist. Make sure you spelt both the path and file right, as well as ensure the file is in that directory.");
+      throw FileSystemException(
+          '[YAMH] The file you provided seems to not exist. Check if the file does exist and that you spelt the file and its path properly.',
+          args['file']);
     }
 
     var input = File(args['file']);
