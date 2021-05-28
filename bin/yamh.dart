@@ -95,10 +95,7 @@ void printUsage(ArgParser parser) {
 } // Print usage for when using in the command line
 
 void SaveFile(String input, String output) async {
-  var check = RegExp(r'\.(html|htm)');
-  input.replaceAll(RegExp(r'\.md'), ''); // Remove .md from file
-  if (check.hasMatch(output)) {
-    await File(output).writeAsString(input);
-  } // Check if file ends in htm(l)
-  await File(output + '.html').writeAsString(input);
+  var outpath;
+  outpath = output.replaceAll(RegExp(r'\.html'), '');
+  await File(outpath + '.html').writeAsString(input);
 }
