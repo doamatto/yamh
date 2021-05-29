@@ -57,7 +57,7 @@ Future<String> yamh_str(String input, String? output) async {
 
 /// Saves the parsed Markdown string to the file specified
 ///
-/// Throws an [ArgumentError] if the output is mentioned, but left empty.
+/// Throws an [ArgumentError] if the output is mentioned, but left empty. If output directory doesn't exist, it will be created.
 Future<void> _saveFile(String content, String output) async {
   if (output == '') {
     throw ArgumentError(
