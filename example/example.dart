@@ -7,5 +7,5 @@ void main() async {
   });
 
   final file = File('../test/test.md');
-  yamh_file(file, null);
+  await yamh_file(file, null);
 }
