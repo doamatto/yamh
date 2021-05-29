@@ -14,9 +14,9 @@ void main() {
   });
 
   test('File converts properly to same directory', () async {
-    var file = File('./test.md');
+    var file = File('test.md');
     yamh_file(file, null);
-    var newFile = File('./test.html');
+    var newFile = File('test.html');
     expect(await newFile.exists(), true);
     var newFileStr = newFile.readAsString();
     expect(
