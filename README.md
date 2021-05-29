@@ -42,7 +42,12 @@ This has not been implemented yet. When it is, this will be updated to show the 
 ## Building
 1. Install [Dart](https://dart.dev)
 2. Fetch dependencies (`dart pub get`)
-3. Build the binaries (`dart2native bin/yamh.dart -o build/yamh.ext`; replacing `« ext »` with `« exe »` if on Windows or `« app »` if on macOS)
+
+### Building for the command-line
+To build binaries, use `dart2native bin/yamh.dart -o build/yamh.ext`; replacing `« ext »` with `« exe »` if on Windows or `« app »` if on macOS.
+
+### Building for JavaScript/Web
+To build, use `dart2js bin/yamh.dart -o build/yamh.js -m -O2`. You can replace « build/yamh.js » for wherever you want the JavaScript file to be saved to.
 
 ## Acknowledgements
 This project is licensed under the MIT License. You can see a copy of it in the `LICENSE` file in the root of this repository.
