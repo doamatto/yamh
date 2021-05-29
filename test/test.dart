@@ -18,8 +18,9 @@ void main() {
     await yamh_file(file, null);
     var newFile = File('test/test.html');
     expect(await newFile.exists(), true);
-    var newFileStr = newFile.readAsString();
-    expect(newFileStr, equals(await File('test/expect.html').readAsString()));
+    var newFileStr = newFile.readAsString().toString();
+    expect(
+        newFileStr, equals(File('test/expect.html').readAsString().toString()));
   });
 
   test('File converts properly to custom directory', () async {
@@ -27,7 +28,8 @@ void main() {
     await yamh_file(file, 'test/testing/test.html');
     var newFile = File('test/testing/test.html');
     expect(await newFile.exists(), true);
-    var newFileStr = newFile.readAsString();
-    expect(newFileStr, equals(await File('test/expect.html').readAsString()));
+    var newFileStr = newFile.readAsString().toString();
+    expect(
+        newFileStr, equals(File('test/expect.html').readAsString().toString()));
   });
 }
