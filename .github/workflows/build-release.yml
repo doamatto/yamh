@@ -28,6 +28,9 @@ jobs:
           mkdir build/
           dart2native bin/yamh.dart -v -o build/${{ matrix.output-name }}
       
+      - name: Create JavaScript binaries
+        run: dart2js bin/yamh.dart -v -o build/yamh.js -m -O2 
+
       - name: Upload to Github Releases
         uses: softprops/action-gh-release@v1
         with:
