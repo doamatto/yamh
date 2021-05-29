@@ -1,5 +1,5 @@
 name: yamh
-version: 0.1.1
+version: 0.2.0
 description: Yet Another Markdown to HTML converter. Dirt simple and null-safe. 
 repository: https://github.com/doamatto/yamh
 issue_tracker: https://github.com/doamatto/yamh/issues
