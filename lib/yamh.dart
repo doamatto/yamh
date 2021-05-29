@@ -64,6 +64,9 @@ Future<void> _saveFile(String content, String output) async {
         '[YAMH] You specified an output, however left the value blank.');
   }
   var outpath = output.replaceAll(RegExp(r'\.html'), '');
+  if (await File(outpath + '.html').exists() == false) {
+    await File(outpath + '.html').create(recursive: true);
+  } // Create directory to be saved to if it doesn't exist already
   await File(outpath + '.html').writeAsString(content, mode: FileMode.write);
   return;
 }
