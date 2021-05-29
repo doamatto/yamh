@@ -16,6 +16,8 @@ A dirt simple, null-safe Markdown to HTML converter.
 > \*\*\* This is just an idea of mine that I may or may not do. Stands for `Way Too Fast Framework` and would be used for websites.
 
 ## Usage
+You can either [build](#Building) YAMH or [download a pre-built binary](https://github.com/doamatto/yamh/releases) from GitHub.
+
 ### Command-line usage
 You can see the usage information provided by running `./yamh -h` or `./yamh --help`. All of these commands are flags/options for the `./yamh` command and should be appended to it.
 
