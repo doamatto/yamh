@@ -15,25 +15,19 @@ void main() {
 
   test('File converts properly to same directory', () async {
     var file = File('test/test.md');
-    yamh_file(file, null);
-    var newFile = File('test.html');
+    await yamh_file(file, null);
+    var newFile = File('test/test.html');
     expect(await newFile.exists(), true);
     var newFileStr = newFile.readAsString();
-    expect(
-        newFileStr,
-        equals(
-            '<p><strong>This</strong> is a <em>markdown</em> string.</p>\n'));
+    expect(newFileStr, equals(await File('test/expect.html').readAsString()));
   });
 
   test('File converts properly to custom directory', () async {
-    var file = File('test.md');
-    yamh_file(file, 'testing/test.html');
-    var newFile = File('testing/test.html');
+    var file = File('test/test.md');
+    await yamh_file(file, 'test/testing/test.html');
+    var newFile = File('test/testing/test.html');
     expect(await newFile.exists(), true);
     var newFileStr = newFile.readAsString();
-    expect(
-        newFileStr,
-        equals(
-            '<p><strong>This</strong> is a <em>markdown</em> string.</p>\n'));
+    expect(newFileStr, equals(await File('test/expect.html').readAsString()));
   });
 }
