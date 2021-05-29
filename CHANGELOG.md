@@ -1,6 +1,5 @@
 # v0.2.0
 - Added Dart functions in `lib/yamh.dart`.
-- Added support for JavaScript.
 - Setup testing suite in `test/test.dart`.
 - Setup a Dart example in `examples/example.dart`.
 - Setup a Shell example in `examples/yamh.sh`.
