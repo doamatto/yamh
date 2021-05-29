@@ -31,6 +31,9 @@ jobs:
       - name: Upload to Github Releases
         uses: softprops/action-gh-release@v1
         with:
-          files: build/
+          files: |
+            build/hello-linux
+            build/hello-windows
+            build/hello-mac
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
