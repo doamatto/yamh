@@ -28,7 +28,13 @@ You can see the usage information provided by running `./yamh -h` or `./yamh --h
     - **If you are using the `-f` option**, it will default to saving in the same directory as the Markdown file. 
 
 ### in Dart and Flutter
-This has not been implemented yet. When it is, this will be updated to show the relevant documentation.
+**Note:** Support for Flutter has not been added yet. When it is, this will be updated to show the relevant documentation.
+
+There are two core functions you can use:
+- `yamh_str(<string>, [output])`&mdash; Converts a string of Markdown to HTML. You can omit the `[output]` with `null`, and have it be returned for using in a promise (see the example in `example/example.dart`).
+- `yamh_file(<file>, [output])`&mdash; Converts a Markdown file to a HTML file. You can omit the `[output]` with `null`, and have the file be saved to the same directory as the Markdown file. Otherwise, you can specify where you want the file to be saved.
+
+You can see a working example in both `example/example.dart`, as well as `test/test.dart`. You can read the full API reference [here](https://pub.dev/documentation/yamh/latest/).
 
 ### in Node/NPM
 This has not been implemented yet. When it is, this will be updated to show the relevant documentation. It may also never happen, due to a lack of knowledge.
