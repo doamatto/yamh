@@ -2,7 +2,7 @@
 A dirt simple, null-safe Markdown to HTML converter.
 
 ## Features
-- Functions for both Dart and Flutter\*
+- Functions for both Dart and Flutter
 - Support for either string input or file input
 - Batch parse Markdown files\*
 - Available for NPM\*\*
@@ -28,8 +28,6 @@ You can see the usage information provided by running `./yamh -h` or `./yamh --h
     - **If you are using the `-f` option**, it will default to saving in the same directory as the Markdown file. 
 
 ### in Dart and Flutter
-**Note:** Support for Flutter has not been added yet. When it is, this will be updated to show the relevant documentation.
-
 There are two core functions you can use:
 - `yamh_str(<string>, [output])`&mdash; Converts a string of Markdown to HTML. You can omit the `[output]` with `null`, and have it be returned for using in a promise (see the example in `example/example.dart`).
 - `yamh_file(<file>, [output])`&mdash; Converts a Markdown file to a HTML file. You can omit the `[output]` with `null`, and have the file be saved to the same directory as the Markdown file. Otherwise, you can specify where you want the file to be saved.
